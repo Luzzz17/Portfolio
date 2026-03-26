@@ -17,6 +17,8 @@ export const metadata: Metadata = {
   description: "Portfolio de Léo Fernandez, Ingénieur Informatique (BUT RACA). À la recherche d'une alternance de 3 ans en conception logicielle et systèmes sécurisés.",
 };
 
+import { Navbar } from "@/components/layout/Navbar";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -27,7 +29,10 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col bg-black">
+        <Navbar />
+        {children}
+      </body>
     </html>
   );
 }
