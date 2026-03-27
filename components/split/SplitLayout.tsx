@@ -45,7 +45,7 @@ export function SplitLayout({ leftContent, rightContent }: SplitLayoutProps) {
         {/* Fallback glow */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-emerald-500/5 blur-[120px] rounded-full pointer-events-none"></div>
 
-        <div className="relative z-10 space-y-6">
+        <div className="relative z-10 space-y-6 pt-10 lg:pt-20">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

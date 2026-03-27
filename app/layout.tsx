@@ -31,8 +31,28 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="h-full bg-black overflow-hidden">
+        <style dangerouslySetInnerHTML={{ __html: `
+          ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+          }
+          ::-webkit-scrollbar-track {
+            background: transparent;
+          }
+          ::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 20px;
+            border: 2px solid #000;
+          }
+          ::-webkit-scrollbar-thumb:hover {
+            background: #10b981;
+          }
+          * {
+            scrollbar-width: thin;
+            scrollbar-color: #1e293b transparent;
+          }
+        `}} />
         {children}
-        <Footer />
       </body>
     </html>
   );
