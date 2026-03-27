@@ -62,13 +62,13 @@ export function AboutSection() {
 
             <div className="space-y-5 text-lg text-slate-400 font-light leading-relaxed">
               <p>
-                Passionné par le développement depuis mes premières lignes de code, je suis actuellement étudiant en <strong className="text-slate-200 font-medium">2ème année de BUT Informatique</strong>, spécialité <span className="text-emerald-400/90 font-medium">Réalisation d'Applications (RACA)</span>.
+                Passionné par le développement depuis mes premières lignes de code, je suis actuellement étudiant en <strong className="text-slate-200 font-medium">2ème année de <span className="whitespace-nowrap">BUT Informatique</span></strong>, spécialité <span className="text-emerald-400/90 font-medium">Réalisation d'Applications (RACA)</span>.
               </p>
               <p>
                 Mon approche de l'ingénierie logicielle repose sur le pragmatisme : concevoir des architectures robustes, intégrer la sécurité "by design", et fournir une expérience utilisateur fluide. L'aspect esthétique et la performance vont de pair dans mes créations.
               </p>
               <p>
-                Ma perspective actuelle ? Rejoindre une équipe ambitieuse pour une <strong className="text-white font-medium border-b border-emerald-500/50 pb-0.5">alternance de 3 ans</strong> en cycle ingénieur dès septembre, où je pourrai relever des défis techniques de haut niveau.
+                Ma perspective ? Intégrer une équipe ambitieuse pour une <strong className="text-white font-medium border-b border-emerald-500/50 pb-0.5">alternance de 3 ans</strong> en cycle ingénieur, où je pourrai contribuer à des architectures logicielles exigeantes et innovantes.
               </p>
             </div>
 
