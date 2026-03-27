@@ -1,9 +1,17 @@
-import { IdeShell } from "@/components/ide/IdeShell";
+import { SplitLayout } from "@/components/split/SplitLayout";
+import { AboutSection } from "@/components/about/AboutSection";
+import { ProjectsSection } from "@/components/projects/ProjectsSection";
 
 export default function Home() {
   return (
-    <main className="h-screen bg-black overflow-hidden selection:bg-emerald-700 selection:text-white">
-      <IdeShell />
-    </main>
+    <SplitLayout 
+      leftContent={null} // Déjà géré à l'intérieur de SplitLayout pour ce test
+      rightContent={
+        <>
+          <AboutSection />
+          <ProjectsSection />
+        </>
+      }
+    />
   );
 }
