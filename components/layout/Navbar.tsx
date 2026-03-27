@@ -14,7 +14,7 @@ export function Navbar() {
         <li><a href="#experience" className="hover:text-white transition-colors">Expériences</a></li>
       </ul>
       <div>
-        <a href="#contact" className="px-5 py-2.5 text-sm font-semibold text-black bg-white rounded-full hover:bg-slate-200 transition-colors shadow-[0_0_15px_rgba(255,255,255,0.1)] hover:shadow-[0_0_20px_rgba(255,255,255,0.3)]">
+        <a href="#contact" className="px-5 py-2.5 text-sm font-bold text-slate-950 bg-emerald-500 rounded-full hover:bg-emerald-400 transition-all shadow-[0_0_15px_rgba(16,185,129,0.3)] hover:shadow-[0_0_25px_rgba(16,185,129,0.5)]">
           Me contacter
         </a>
       </div>

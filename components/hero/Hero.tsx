@@ -1,10 +1,19 @@
 "use client";
 
-import { motion, Variants } from "framer-motion";
+import { motion, useMotionTemplate, useMotionValue, Variants } from "framer-motion";
 import { ArrowRight, Download } from "lucide-react";
 import { Button } from "@/components/ui/Button";
+import { MouseEvent } from "react";
 
 export function Hero() {
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+
+  function handleMouseMove({ currentTarget, clientX, clientY }: MouseEvent) {
+    const { left, top } = currentTarget.getBoundingClientRect();
+    mouseX.set(clientX - left);
+    mouseY.set(clientY - top);
+  }
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: { 
@@ -28,11 +37,28 @@ export function Hero() {
   };
 
   return (
-    <section className="relative min-h-screen flex flex-col justify-center items-start overflow-hidden bg-black text-slate-50">
+    <section 
+      className="relative min-h-screen flex flex-col justify-center items-start overflow-hidden bg-black text-slate-50 group"
+      onMouseMove={handleMouseMove}
+    >
       
-      {/* Refined Glow effect - Emerald Green Accent */}
-      <div className="absolute top-1/3 -right-24 w-[800px] h-[800px] bg-emerald-900/15 blur-[120px] rounded-full pointer-events-none"></div>
-      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-emerald-900/5 blur-[150px] rounded-full pointer-events-none"></div>
+      {/* Magnetic Interactive Glow Effect (Desktop) */}
+      <motion.div
+        className="pointer-events-none absolute inset-0 z-0 transition duration-1000 opacity-0 group-hover:opacity-100 hidden md:block"
+        style={{
+          background: useMotionTemplate`
+            radial-gradient(
+              750px circle at ${mouseX}px ${mouseY}px,
+              rgba(16, 185, 129, 0.12),
+              transparent 80%
+            )
+          `,
+        }}
+      />
+
+      {/* Fallback Static Glow (Mobile) */}
+      <div className="absolute top-1/3 -right-24 w-[800px] h-[800px] bg-emerald-900/15 blur-[120px] rounded-full pointer-events-none md:hidden z-0"></div>
+      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-emerald-900/5 blur-[150px] rounded-full pointer-events-none md:hidden z-0"></div>
 
       <div className="container relative z-10 px-6 md:px-12 mx-auto max-w-6xl">
         <motion.div 
@@ -67,7 +93,12 @@ export function Hero() {
 
           {/* Call to Action */}
           <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 pt-6">
-            <Button size="lg" icon={ArrowRight} className="bg-white text-black hover:bg-slate-200">
+            <Button 
+              size="lg" 
+              icon={ArrowRight} 
+              className="bg-white text-black hover:bg-slate-200"
+              onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
+            >
               Voir mon profil
             </Button>
             <Button variant="ghost" size="lg" icon={Download} iconPosition="left">
