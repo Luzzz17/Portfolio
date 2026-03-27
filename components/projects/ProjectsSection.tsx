@@ -65,7 +65,7 @@ export function ProjectsSection() {
   );
 
   return (
-    <section id="projects" className="py-24 bg-black relative">
+    <section id="projects" className="py-12 bg-transparent relative">
       <div id="experience" className="absolute top-0"></div>
       
       {/* Subtle top border gradient line */}

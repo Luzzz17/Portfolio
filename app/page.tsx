@@ -1,13 +1,9 @@
-import { Hero } from "@/components/hero/Hero";
-import { AboutSection } from "@/components/about/AboutSection";
-import { ProjectsSection } from "@/components/projects/ProjectsSection";
+import { IdeShell } from "@/components/ide/IdeShell";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-black font-sans selection:bg-emerald-700 selection:text-white">
-      <Hero />
-      <AboutSection />
-      <ProjectsSection />
+    <main className="h-screen bg-black overflow-hidden selection:bg-emerald-700 selection:text-white">
+      <IdeShell />
     </main>
   );
 }

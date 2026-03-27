@@ -38,7 +38,7 @@ export function Hero() {
 
   return (
     <section 
-      className="relative min-h-screen flex flex-col justify-center items-start overflow-hidden bg-black text-slate-50 group"
+      className="relative flex flex-col justify-center items-start overflow-hidden bg-transparent text-slate-50 group py-20"
       onMouseMove={handleMouseMove}
     >
       

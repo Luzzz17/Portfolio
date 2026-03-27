@@ -14,7 +14,7 @@ export function AboutSection() {
   ];
 
   return (
-    <section id="about" className="py-24 bg-black relative">
+    <section id="about" className="py-12 bg-transparent relative">
       <div className="container mx-auto px-6 md:px-12 max-w-6xl relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           
