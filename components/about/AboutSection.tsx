@@ -19,14 +19,6 @@ export function AboutSection() {
     mouseY.set(clientY - top);
   }
 
-  const skills = [
-    { name: "TypeScript", icon: Code2 },
-    { name: "React & Next.js", icon: LayoutTemplate },
-    { name: "PHP & Laravel", icon: Database },
-    { name: "SQL & Bases de données", icon: Database },
-    { name: "Architecture JS/TS", icon: TerminalSquare },
-    { name: "Sécurité web", icon: ShieldCheck },
-  ];
 
   return (
     <section id="about" className="py-24 bg-slate-50 dark:bg-black relative transition-colors duration-300">
@@ -145,20 +137,6 @@ export function AboutSection() {
               </p>
             </div>
 
-            {/* Skills grid */}
-            <div className="pt-4">
-              <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-600 dark:text-slate-500 mb-6 transition-colors">
-                Compétences Clés
-              </h3>
-              <div className="flex flex-wrap gap-2">
-                {skills.map((skill) => (
-                  <div key={skill.name} className="group flex items-center space-x-2 px-3 py-1.5 bg-white dark:bg-white/[0.02] border border-slate-200 dark:border-white/5 rounded-md hover:border-emerald-500/30 dark:hover:border-emerald-500/30 hover:bg-emerald-50 dark:hover:bg-emerald-500/5 shadow-sm dark:shadow-none transition-all cursor-default relative overflow-hidden">
-                    <skill.icon size={14} className="text-slate-500 dark:text-slate-500 group-hover:text-emerald-500 dark:group-hover:text-emerald-400 transition-colors z-10" />
-                    <span className="text-[11px] font-mono tracking-tight text-slate-600 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-white transition-colors z-10">{skill.name}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
           </motion.div>
 
         </div>

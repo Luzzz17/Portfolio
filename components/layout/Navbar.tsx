@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Mail } from 'lucide-react';
 import { Logo } from '@/components/ui/Logo';
@@ -9,13 +10,31 @@ import { ThemeToggle } from '@/components/theme/ThemeToggle';
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
 
   const navLinks = [
     { name: "Profil", href: "/#about" },
+    { name: "Compétences", href: "/#skills" },
     { name: "Parcours", href: "/#parcours" },
     { name: "Projets", href: "/#projects" },
     { name: "Expériences", href: "/#experience" },
   ];
+
+  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    // Intercepter uniquement si nous sommes déjà sur la page d'accueil
+    if (pathname === '/' && href.startsWith('/#')) {
+      e.preventDefault();
+      const targetId = href.replace('/#', '');
+      const element = document.getElementById(targetId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+        window.history.pushState(null, '', href);
+        // Déclencher manuellement l'événement pour les composants à l'écoute (ex: ProjectsSection)
+        window.dispatchEvent(new Event('hashchange'));
+      }
+    }
+  };
+
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 py-4 bg-white/80 dark:bg-black/60 backdrop-blur-md border-b border-slate-200 dark:border-white/5 transition-colors duration-300">
@@ -28,7 +47,11 @@ export function Navbar() {
       <ul className="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-600 dark:text-slate-300">
         {navLinks.map((link) => (
           <li key={link.name}>
-            <Link href={link.href} className="hover:text-slate-900 dark:hover:text-white transition-colors">
+            <Link 
+              href={link.href} 
+              onClick={(e) => handleScroll(e, link.href)}
+              className="hover:text-slate-900 dark:hover:text-white transition-colors"
+            >
               {link.name}
             </Link>
           </li>
@@ -79,7 +102,10 @@ export function Navbar() {
                   key={link.name}
                   href={link.href}
                   className="text-lg font-medium text-slate-600 dark:text-slate-300 hover:text-emerald-500 dark:hover:text-emerald-400 py-2 border-b border-slate-100 dark:border-white/5 flex items-center justify-between group"
-                  onClick={() => setIsOpen(false)}
+                  onClick={(e) => {
+                    setIsOpen(false);
+                    handleScroll(e, link.href);
+                  }}
                 >
                   {link.name}
                   <span className="opacity-0 group-hover:opacity-100 transition-opacity text-emerald-500">→</span>
