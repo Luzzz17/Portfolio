@@ -20,13 +20,13 @@ export interface Project {
 
 export function ProjectCard({ project }: { project: Project }) {
   return (
-    <div className="group relative flex flex-col justify-between h-full p-6 bg-white/[0.02] border border-white/10 rounded-xl backdrop-blur-md transition-all duration-500 hover:border-emerald-500/40 hover:bg-emerald-500/[0.02] hover:shadow-[0_0_30px_rgba(16,185,129,0.05)] overflow-hidden">
+    <div className="group relative flex flex-col justify-between h-full p-6 bg-white dark:bg-white/[0.02] border border-slate-200 dark:border-white/10 rounded-xl backdrop-blur-md transition-all duration-500 hover:border-emerald-500/40 dark:hover:border-emerald-500/40 hover:bg-emerald-50 dark:hover:bg-emerald-500/[0.02] shadow-sm dark:shadow-none hover:shadow-[0_4px_20px_rgba(16,185,129,0.1)] dark:hover:shadow-[0_0_30px_rgba(16,185,129,0.05)] overflow-hidden">
       
       {/* Decorative Corner Accents */}
-      <div className="absolute top-0 left-0 w-2 h-2 border-t border-l border-white/20 group-hover:border-emerald-500 transition-colors"></div>
-      <div className="absolute top-0 right-0 w-2 h-2 border-t border-r border-white/20 group-hover:border-emerald-500 transition-colors"></div>
-      <div className="absolute bottom-0 left-0 w-2 h-2 border-b border-l border-white/20 group-hover:border-emerald-500 transition-colors"></div>
-      <div className="absolute bottom-0 right-0 w-2 h-2 border-b border-r border-white/20 group-hover:border-emerald-500 transition-colors"></div>
+      <div className="absolute top-0 left-0 w-2 h-2 border-t border-l border-slate-300 dark:border-white/20 group-hover:border-emerald-500 transition-colors"></div>
+      <div className="absolute top-0 right-0 w-2 h-2 border-t border-r border-slate-300 dark:border-white/20 group-hover:border-emerald-500 transition-colors"></div>
+      <div className="absolute bottom-0 left-0 w-2 h-2 border-b border-l border-slate-300 dark:border-white/20 group-hover:border-emerald-500 transition-colors"></div>
+      <div className="absolute bottom-0 right-0 w-2 h-2 border-b border-r border-slate-300 dark:border-white/20 group-hover:border-emerald-500 transition-colors"></div>
 
       <div>
         <div className="flex justify-between items-start mb-4">
@@ -46,17 +46,17 @@ export function ProjectCard({ project }: { project: Project }) {
             )}
           </div>
         </div>
-        <h3 className="text-xl md:text-2xl font-bold text-white mb-3 group-hover:text-emerald-400 transition-colors tracking-tight">
+        <h3 className="text-xl md:text-2xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-emerald-500 dark:group-hover:text-emerald-400 transition-colors tracking-tight">
           {project.title}
         </h3>
-        <p className="text-slate-400 leading-relaxed mb-6 font-light text-sm">
+        <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-6 font-light text-sm">
           {project.description}
         </p>
       </div>
 
-      <div className="flex flex-wrap gap-1.5 mt-auto pt-4 border-t border-white/5">
+      <div className="flex flex-wrap gap-1.5 mt-auto pt-4 border-t border-slate-100 dark:border-white/5">
         {project.techStack.map((tech) => (
-          <span key={tech} className="px-2 py-0.5 text-[9px] font-mono text-slate-400 bg-white/5 rounded-sm border border-white/10 group-hover:border-emerald-500/20 group-hover:text-slate-300 transition-colors">
+          <span key={tech} className="px-2 py-0.5 text-[9px] font-mono text-slate-600 dark:text-slate-400 bg-slate-100 dark:bg-white/5 rounded-sm border border-slate-200 dark:border-white/10 group-hover:border-emerald-500/30 dark:group-hover:border-emerald-500/20 group-hover:text-slate-900 dark:group-hover:text-slate-300 transition-colors">
             {tech}
           </span>
         ))}

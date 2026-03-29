@@ -29,7 +29,7 @@ export function AboutSection() {
   ];
 
   return (
-    <section id="about" className="py-24 bg-black relative">
+    <section id="about" className="py-24 bg-slate-50 dark:bg-black relative transition-colors duration-300">
       <div className="container mx-auto px-6 md:px-12 max-w-6xl relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           
@@ -46,7 +46,7 @@ export function AboutSection() {
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] bg-emerald-500/10 blur-[100px] rounded-full pointer-events-none"></div>
             
             {/* Photo Container Frame with Interactive Border */}
-            <div className="relative w-full max-w-sm aspect-square rounded-2xl bg-slate-900/50 group backdrop-blur-xl shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+            <div className="relative w-full max-w-sm aspect-square rounded-2xl bg-white/50 dark:bg-slate-900/50 group backdrop-blur-xl shadow-xl dark:shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-colors duration-300">
               
               {/* Diffused Back Glow (Follows Mouse) */}
               <motion.div
@@ -128,33 +128,33 @@ export function AboutSection() {
             className="space-y-8"
           >
             <div className="space-y-4">
-              <h2 className="text-4xl md:text-5xl font-bold tracking-tighter text-white">
+              <h2 className="text-4xl md:text-5xl font-bold tracking-tighter text-slate-900 dark:text-white transition-colors duration-300">
                 Mon <span className="text-emerald-500">Profil</span>
               </h2>
             </div>
 
-            <div className="space-y-5 text-lg text-slate-400 font-light leading-relaxed">
+            <div className="space-y-5 text-lg text-slate-600 dark:text-slate-400 font-light leading-relaxed transition-colors duration-300">
               <p>
-                Passionné par le développement depuis mes premières lignes de code, je suis actuellement étudiant en <strong className="text-slate-200 font-medium">2ème année de <span className="whitespace-nowrap">BUT Informatique</span></strong>, spécialité <span className="text-emerald-400/90 font-medium">Réalisation d'Applications (RACA)</span>.
+                Passionné par le développement depuis mes premières lignes de code, je suis actuellement étudiant en <strong className="text-slate-900 dark:text-slate-200 font-medium transition-colors">2ème année de <span className="whitespace-nowrap">BUT Informatique</span></strong>, spécialité <span className="text-emerald-500 dark:text-emerald-400/90 font-medium">Réalisation d'Applications (RACA)</span>.
               </p>
               <p>
                 Mon approche de l'ingénierie logicielle repose sur le pragmatisme : concevoir des architectures robustes, intégrer la sécurité dès le départ, et fournir une expérience utilisateur fluide.
               </p>
               <p>
-                Ma perspective ? Intégrer une équipe ambitieuse pour une <strong className="text-white font-medium border-b border-emerald-500/50 pb-0.5">alternance de 3 ans</strong> en cycle ingénieur.
+                Ma perspective ? Intégrer une équipe ambitieuse pour une <strong className="text-slate-900 dark:text-white font-medium border-b border-emerald-500/50 pb-0.5 transition-colors">alternance de 3 ans</strong> en cycle ingénieur.
               </p>
             </div>
 
             {/* Skills grid */}
             <div className="pt-4">
-              <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-500 mb-6">
+              <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-600 dark:text-slate-500 mb-6 transition-colors">
                 Compétences Clés
               </h3>
               <div className="flex flex-wrap gap-2">
                 {skills.map((skill) => (
-                  <div key={skill.name} className="group flex items-center space-x-2 px-3 py-1.5 bg-white/[0.02] border border-white/5 rounded-md hover:border-emerald-500/30 hover:bg-emerald-500/5 transition-all cursor-default">
-                    <skill.icon size={14} className="text-slate-500 group-hover:text-emerald-400 transition-colors" />
-                    <span className="text-[11px] font-mono tracking-tight text-slate-400 group-hover:text-white transition-colors">{skill.name}</span>
+                  <div key={skill.name} className="group flex items-center space-x-2 px-3 py-1.5 bg-white dark:bg-white/[0.02] border border-slate-200 dark:border-white/5 rounded-md hover:border-emerald-500/30 dark:hover:border-emerald-500/30 hover:bg-emerald-50 dark:hover:bg-emerald-500/5 shadow-sm dark:shadow-none transition-all cursor-default relative overflow-hidden">
+                    <skill.icon size={14} className="text-slate-500 dark:text-slate-500 group-hover:text-emerald-500 dark:group-hover:text-emerald-400 transition-colors z-10" />
+                    <span className="text-[11px] font-mono tracking-tight text-slate-600 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-white transition-colors z-10">{skill.name}</span>
                   </div>
                 ))}
               </div>

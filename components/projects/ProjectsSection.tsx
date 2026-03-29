@@ -65,11 +65,11 @@ export function ProjectsSection() {
   );
 
   return (
-    <section id="projects" className="py-24 bg-black relative">
+    <section id="projects" className="py-24 bg-slate-50 dark:bg-black relative transition-colors duration-300">
       <div id="experience" className="absolute top-0"></div>
 
       {/* Subtle top border gradient line */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-slate-800 to-transparent"></div>
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-slate-300 dark:via-slate-800 to-transparent transition-colors duration-300"></div>
 
       <div className="container mx-auto px-6 md:px-12 max-w-6xl relative z-10">
         <div className="space-y-4 mb-16">
@@ -77,7 +77,7 @@ export function ProjectsSection() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-bold tracking-tighter text-white"
+            className="text-4xl md:text-5xl font-bold tracking-tighter text-slate-900 dark:text-white transition-colors duration-300"
           >
             Projets & <span className="text-emerald-500">Expériences</span>
           </motion.h2>
@@ -86,7 +86,7 @@ export function ProjectsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-lg text-slate-400 max-w-2xl font-light"
+            className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl font-light transition-colors duration-300"
           >
             Un aperçu de mes réalisations techniques. De mes projets académiques à mes expériences en entreprise.
           </motion.p>
@@ -105,8 +105,8 @@ export function ProjectsSection() {
               key={f}
               onClick={() => setFilter(f)}
               className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${filter === f
-                ? "bg-emerald-500/10 text-emerald-400 border border-emerald-500/50 shadow-[0_0_15px_rgba(16,185,129,0.2)]"
-                : "bg-slate-900/40 text-slate-400 border border-slate-800 hover:text-slate-200 hover:bg-slate-800"
+                ? "bg-emerald-500/20 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/50 shadow-[0_0_15px_rgba(16,185,129,0.1)] dark:shadow-[0_0_15px_rgba(16,185,129,0.2)]"
+                : "bg-white dark:bg-slate-900/40 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-800 hover:text-slate-900 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 shadow-sm dark:shadow-none"
                 }`}
             >
               {f}

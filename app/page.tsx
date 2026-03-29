@@ -5,7 +5,7 @@ import { ProjectsSection } from "@/components/projects/ProjectsSection";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-black font-sans selection:bg-emerald-700 selection:text-white">
+    <main className="min-h-screen bg-slate-50 dark:bg-black font-sans selection:bg-emerald-500/30 transition-colors duration-300">
       <Hero />
       <div className="relative">
         <AboutSection />

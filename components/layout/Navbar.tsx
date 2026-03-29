@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Mail } from 'lucide-react';
 import { Logo } from '@/components/ui/Logo';
+import { ThemeToggle } from '@/components/theme/ThemeToggle';
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,17 +18,17 @@ export function Navbar() {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 py-4 bg-black/60 backdrop-blur-md border-b border-white/5">
+    <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 py-4 bg-white/80 dark:bg-black/60 backdrop-blur-md border-b border-slate-200 dark:border-white/5 transition-colors duration-300">
       {/* Logo */}
       <Link href="/" className="flex items-center group">
         <Logo />
       </Link>
 
       {/* Desktop Navigation */}
-      <ul className="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-300">
+      <ul className="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-600 dark:text-slate-300">
         {navLinks.map((link) => (
           <li key={link.name}>
-            <Link href={link.href} className="hover:text-white transition-colors">
+            <Link href={link.href} className="hover:text-slate-900 dark:hover:text-white transition-colors">
               {link.name}
             </Link>
           </li>
@@ -35,11 +36,13 @@ export function Navbar() {
       </ul>
 
       {/* Action & Mobile Toggle */}
-      <div className="flex items-center space-x-4">
+      <div className="flex items-center space-x-2 md:space-x-4">
+        <ThemeToggle />
+        
         {/* Email Shortcut Icon */}
         <a 
           href="mailto:fernandez06.leo@gmail.com"
-          className="p-2 text-slate-400 hover:text-emerald-400 transition-colors hidden sm:block"
+          className="p-2 text-slate-600 dark:text-slate-400 hover:text-emerald-500 dark:hover:text-emerald-400 transition-colors hidden sm:block"
           title="Envoyer un email directement"
         >
           <Mail size={20} />
@@ -54,7 +57,7 @@ export function Navbar() {
 
         {/* Hamburger Menu Icon */}
         <button 
-          className="md:hidden text-white p-1 hover:bg-white/10 rounded-lg transition-colors"
+          className="md:hidden text-slate-900 dark:text-white p-1 hover:bg-slate-100 dark:hover:bg-white/10 rounded-lg transition-colors ml-2"
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Menu"
         >
@@ -65,32 +68,32 @@ export function Navbar() {
       {/* Mobile Menu Overlay */}
       <AnimatePresence>
         {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="absolute top-full left-0 right-0 bg-slate-950 border-b border-white/10 p-6 md:hidden flex flex-col space-y-4 shadow-2xl"
-          >
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                className="text-lg font-medium text-slate-300 hover:text-emerald-400 py-2 border-b border-white/5 flex items-center justify-between group"
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              className="absolute top-full left-0 right-0 bg-white dark:bg-slate-950 border-b border-slate-200 dark:border-white/10 p-6 md:hidden flex flex-col space-y-4 shadow-2xl transition-colors duration-300"
+            >
+              {navLinks.map((link) => (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  className="text-lg font-medium text-slate-600 dark:text-slate-300 hover:text-emerald-500 dark:hover:text-emerald-400 py-2 border-b border-slate-100 dark:border-white/5 flex items-center justify-between group"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {link.name}
+                  <span className="opacity-0 group-hover:opacity-100 transition-opacity text-emerald-500">→</span>
+                </Link>
+              ))}
+              
+              <a 
+                href="mailto:fernandez06.leo@gmail.com"
+                className="flex items-center gap-3 text-slate-500 dark:text-slate-400 py-2"
                 onClick={() => setIsOpen(false)}
               >
-                {link.name}
-                <span className="opacity-0 group-hover:opacity-100 transition-opacity text-emerald-500">→</span>
-              </Link>
-            ))}
-            
-            <a 
-              href="mailto:fernandez06.leo@gmail.com"
-              className="flex items-center gap-3 text-slate-400 py-2"
-              onClick={() => setIsOpen(false)}
-            >
-              <Mail size={18} />
-              <span>Email direct</span>
-            </a>
+                <Mail size={18} />
+                <span>Email direct</span>
+              </a>
 
             <Link 
               href="/contact"

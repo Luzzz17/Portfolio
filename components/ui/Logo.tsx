@@ -45,7 +45,7 @@ export function Logo({ className = "" }: { className?: string }) {
           transition={{ delay: 0.5, duration: 1 }}
         />
       </svg>
-      <span className="text-xl font-bold tracking-tighter text-white">
+      <span className="text-xl font-bold tracking-tighter text-slate-900 dark:text-white transition-colors duration-300">
         Léo<span className="text-emerald-500">.</span>
       </span>
     </div>

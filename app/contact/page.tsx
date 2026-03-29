@@ -35,7 +35,7 @@ const contactLinks = [
 
 export default function ContactPage() {
   return (
-    <main className="min-h-screen bg-black text-white selection:bg-emerald-500/30">
+    <main className="min-h-screen bg-slate-50 dark:bg-black text-slate-900 dark:text-white selection:bg-emerald-500/30 transition-colors duration-300">
       {/* Background decoration */}
       <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 -left-24 w-[600px] h-[600px] bg-emerald-900/10 blur-[150px] rounded-full"></div>
@@ -50,7 +50,7 @@ export default function ContactPage() {
         >
           <Link 
             href="/" 
-            className="inline-flex items-center gap-2 text-slate-400 hover:text-white transition-colors group mb-8"
+            className="inline-flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors group mb-8"
           >
             <ArrowLeft size={20} className="group-hover:-translate-x-1 transition-transform" />
             <span className="font-medium">Retour à l'accueil</span>
@@ -60,7 +60,7 @@ export default function ContactPage() {
             <h1 className="text-5xl md:text-7xl font-bold tracking-tighter">
               Me <span className="text-emerald-500">Contacter</span>
             </h1>
-            <p className="text-xl text-slate-400 font-light max-w-2xl leading-relaxed">
+            <p className="text-xl text-slate-600 dark:text-slate-400 font-light max-w-2xl leading-relaxed transition-colors duration-300">
               Disponible pour échanger sur des opportunités d'alternance en cycle ingénieur ou sur vos projets technologiques.
             </p>
           </div>
@@ -76,15 +76,15 @@ export default function ContactPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
-              className="group p-8 rounded-3xl bg-white/[0.02] border border-white/5 hover:border-emerald-500/30 hover:bg-white/[0.04] transition-all duration-500 relative overflow-hidden"
+              className="group p-8 rounded-3xl bg-white dark:bg-white/[0.02] border border-slate-200 dark:border-white/5 hover:border-emerald-500/30 dark:hover:border-emerald-500/30 hover:bg-emerald-50 dark:hover:bg-white/[0.04] shadow-sm dark:shadow-none hover:shadow-[0_4px_20px_rgba(16,185,129,0.1)] dark:hover:shadow-none transition-all duration-500 relative overflow-hidden"
             >
               <div className="relative z-10">
-                <div className={`w-12 h-12 rounded-2xl flex items-center justify-center bg-white/5 group-hover:bg-emerald-500/10 group-hover:text-emerald-400 transition-colors mb-6`}>
+                <div className={`w-12 h-12 rounded-2xl flex items-center justify-center bg-slate-100 dark:bg-white/5 group-hover:bg-emerald-500/10 group-hover:text-emerald-500 dark:group-hover:text-emerald-400 transition-colors mb-6`}>
                   <link.icon size={24} />
                 </div>
-                <h3 className="text-xl font-bold mb-1 group-hover:text-emerald-400 transition-colors">{link.name}</h3>
-                <p className="text-emerald-500/80 font-mono text-xs mb-4">{link.handle}</p>
-                <p className="text-slate-500 text-sm font-light leading-relaxed">
+                <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-1 group-hover:text-emerald-500 dark:group-hover:text-emerald-400 transition-colors">{link.name}</h3>
+                <p className="text-emerald-600 dark:text-emerald-500/80 font-mono text-xs mb-4">{link.handle}</p>
+                <p className="text-slate-600 dark:text-slate-500 text-sm font-light leading-relaxed transition-colors duration-300">
                   {link.description}
                 </p>
               </div>

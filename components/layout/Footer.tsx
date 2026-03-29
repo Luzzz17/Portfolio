@@ -4,7 +4,7 @@ import { GithubIcon, LinkedinIcon } from "@/components/ui/Icons";
 
 export function Footer() {
   return (
-    <footer id="contact" className="bg-black py-12 border-t border-white/5">
+    <footer id="contact" className="bg-slate-50 dark:bg-black py-12 border-t border-slate-200 dark:border-white/5 transition-colors duration-300">
       <div className="container mx-auto px-6 md:px-12 max-w-6xl">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           
@@ -20,14 +20,14 @@ export function Footer() {
           <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
             <a 
               href="mailto:fernandez06.leo@gmail.com" 
-              className="text-slate-400 hover:text-emerald-400 transition-colors flex items-center space-x-2 text-sm font-medium"
+              className="text-slate-600 dark:text-slate-400 hover:text-emerald-500 dark:hover:text-emerald-400 transition-colors flex items-center space-x-2 text-sm font-medium"
               aria-label="Envoyer un email"
             >
               <Mail size={18} />
               <span>Me contacter</span>
             </a>
             
-            <div className="w-12 h-px sm:w-px sm:h-6 bg-white/10"></div>
+            <div className="w-12 h-px sm:w-px sm:h-6 bg-slate-300 dark:bg-white/10"></div>
 
             {/* Social Links */}
             <div className="flex items-center space-x-5">
@@ -35,7 +35,7 @@ export function Footer() {
                 href="https://github.com/Luzzz17" 
                 target="_blank" 
                 rel="noreferrer" 
-                className="text-slate-400 hover:text-white transition-colors"
+                className="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors"
                 aria-label="GitHub"
               >
                 <GithubIcon size={22} />
@@ -44,7 +44,7 @@ export function Footer() {
                 href="https://www.linkedin.com/in/fernandezleo/" 
                 target="_blank" 
                 rel="noreferrer" 
-                className="text-slate-400 hover:text-emerald-500 transition-colors"
+                className="text-slate-600 dark:text-slate-400 hover:text-emerald-600 dark:hover:text-emerald-500 transition-colors"
                 aria-label="LinkedIn"
               >
                 <LinkedinIcon size={22} />

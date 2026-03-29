@@ -38,7 +38,7 @@ export function Hero() {
 
   return (
     <section 
-      className="relative min-h-screen flex flex-col justify-center items-start overflow-hidden bg-black text-slate-50 group"
+      className="relative min-h-screen flex flex-col justify-center items-start overflow-hidden bg-slate-50 dark:bg-black text-slate-900 dark:text-slate-50 group transition-colors duration-300"
       onMouseMove={handleMouseMove}
     >
       
@@ -68,17 +68,17 @@ export function Hero() {
           animate="visible"
         >
           {/* Badge */}
-          <motion.div variants={itemVariants} className="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm">
+          <motion.div variants={itemVariants} className="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 backdrop-blur-sm">
             <span className="flex h-2 w-2 rounded-full bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.8)]"></span>
-            <span className="text-sm font-medium text-slate-300">Recherche d'alternance 3 ans</span>
+            <span className="text-sm font-medium text-slate-600 dark:text-slate-300">Recherche d'alternance 3 ans</span>
           </motion.div>
 
           {/* Title */}
           <motion.div variants={itemVariants} className="space-y-4 max-w-4xl">
-            <h1 className="text-5xl md:text-8xl font-bold tracking-tighter text-white">
+            <h1 className="text-5xl md:text-8xl font-bold tracking-tighter text-slate-900 dark:text-white transition-colors duration-300">
               Léo Fernandez
             </h1>
-            <p className="text-2xl md:text-4xl font-medium tracking-tight text-slate-400">
+            <p className="text-2xl md:text-4xl font-medium tracking-tight text-slate-600 dark:text-slate-400 transition-colors duration-300">
               Conception Logicielle &amp; Architecture de Systèmes.
             </p>
           </motion.div>
@@ -86,9 +86,9 @@ export function Hero() {
           {/* Subtitle */}
           <motion.p 
             variants={itemVariants} 
-            className="max-w-3xl text-lg md:text-xl text-slate-500 leading-relaxed font-light"
+            className="max-w-3xl text-lg md:text-xl text-slate-600 dark:text-slate-500 leading-relaxed font-light transition-colors duration-300"
           >
-            Futur ingénieur passionné par la résolution de problèmes complexes. En <strong className="text-slate-300 font-medium whitespace-nowrap">BUT Informatique</strong>, je développe une vision transversale combinant développement, infrastructure et sécurité. À la recherche d'une alternance de 3 ans pour relever des défis techniques à grande échelle.
+            Futur ingénieur passionné par la résolution de problèmes complexes. En <strong className="text-slate-800 dark:text-slate-300 font-medium whitespace-nowrap">BUT Informatique</strong>, je développe une vision transversale combinant développement, infrastructure et sécurité. À la recherche d'une alternance de 3 ans pour relever des défis techniques à grande échelle.
           </motion.p>
 
           {/* Call to Action */}
@@ -96,7 +96,6 @@ export function Hero() {
             <Button 
               size="lg" 
               icon={ArrowRight} 
-              className="bg-white text-black hover:bg-slate-200"
               onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
             >
               Voir mon profil
