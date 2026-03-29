@@ -10,6 +10,7 @@ export function Navbar() {
       </div>
       <ul className="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-300">
         <li><a href="#about" className="hover:text-white transition-colors">Profil</a></li>
+        <li><a href="#parcours" className="hover:text-white transition-colors">Parcours</a></li>
         <li><a href="#projects" className="hover:text-white transition-colors">Projets</a></li>
         <li><a href="#experience" className="hover:text-white transition-colors">Expériences</a></li>
       </ul>
