@@ -12,10 +12,11 @@ Le design doit inspirer la confiance, la rigueur industrielle et la modernité. 
 
 ## 2. STACK TECHNIQUE STRICTE
 - **Framework :** Next.js 14+ (Utilisation exclusive de l'App Router).
-- **Langage :** TypeScript (Mode strict obligatoire).
+- **Langage :** TypeScript (Mode strict absolu, aucun avertissement ESLint. Ne jamais oublier d'échapper les caractères typographiques via &apos; et de nettoyer les imports inutilisés à la fin d'une tâche).
 - **Stylisation :** Tailwind CSS. Aucun fichier `.css` externe ou module CSS n'est autorisé.
 - **Icônes :** `lucide-react`.
 - **Animations (si nécessaire et subtil) :** `framer-motion`.
+- **Thème :** next-themes (Gestion native de l'hydratation Dark/Light avec suppressHydrationWarning sans faire crasher la compilation).
 
 ## 3. RÈGLES D'INGÉNIERIE ET CODE PROPRE
 - **Typage absolu :** L'utilisation du type `any` est strictement interdite. Toutes les props, réponses d'API et variables d'état doivent avoir une `interface` ou un `type` TypeScript défini de manière explicite.
@@ -25,6 +26,7 @@ Le design doit inspirer la confiance, la rigueur industrielle et la modernité. 
 - **Gestion des erreurs :** Prévois toujours des états de chargement (skeletons) et des gestions d'erreurs élégantes.
 
 ## 4. DIRECTIVES UI / UX (LE RENDU VISUEL)
+- **RÈGLE D'OR DU DESIGN :** Chaque composant DOIT être développé avec les classes Tailwind pour le Light Mode ET le Dark Mode simultanément (ex: bg-slate-50 dark:bg-black). Rien ne doit casser le contraste entre les deux modes.
 - **Vibe générale :** "Corporate Tech", sobre, pointu, sécurisé. 
 - **Palette de couleurs :** Utilise des tons professionnels (bleus profonds, ardoise, gris industriels, noir, avec des accents de couleur subtils pour les Call-to-Action). Pas de couleurs criardes.
 - **Typographie :** Lisible, géométrique et moderne (ex: Inter ou Roboto).
@@ -32,6 +34,7 @@ Le design doit inspirer la confiance, la rigueur industrielle et la modernité. 
 - **Animations :** Seulement des micro-interactions (hover sur les boutons, légers fondus à l'apparition). Pas d'effets visuels distrayants ou amateurs.
 
 ## 5. RÈGLES DE COMPORTEMENT DE L'AGENT
+- Exactitude des compétences : N'ajoute jamais de compétences techniques ou de jargon "fantôme" que je n'ai pas demandé ou qui sortent du cadre de la formation BUT RACA.
 - Ne propose JAMAIS d'installer une nouvelle dépendance NPM sans m'expliquer pourquoi et me demander mon accord.
 - Avant de coder une section complexe, fournis-moi toujours un bref plan de l'architecture des composants.
 - Fournis le code complet, propre, sans commentaires inutiles et prêt à être copié-collé en production. Pas de code tronqué avec des commentaires du type `// ... le reste du code ici`.

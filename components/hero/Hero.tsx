@@ -67,7 +67,7 @@ export function Hero() {
           {/* Badge */}
           <motion.div variants={itemVariants} className="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 backdrop-blur-sm">
             <span className="flex h-2 w-2 rounded-full bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.8)]"></span>
-            <span className="text-sm font-medium text-slate-600 dark:text-slate-300">Recherche d'alternance 3 ans</span>
+            <span className="text-sm font-medium text-slate-600 dark:text-slate-300">Recherche d&apos;alternance 3 ans</span>
           </motion.div>
 
           {/* Title */}
@@ -85,7 +85,7 @@ export function Hero() {
             variants={itemVariants} 
             className="max-w-3xl text-lg md:text-xl text-slate-600 dark:text-slate-500 leading-relaxed font-light transition-colors duration-300"
           >
-            Futur ingénieur passionné par la résolution de problèmes complexes. En <strong className="text-slate-800 dark:text-slate-300 font-medium whitespace-nowrap">BUT Informatique</strong>, je développe une vision transversale combinant développement, infrastructure et sécurité. À la recherche d'une alternance de 3 ans pour relever des défis techniques à grande échelle.
+            Futur ingénieur passionné par la résolution de problèmes complexes. En <strong className="text-slate-800 dark:text-slate-300 font-medium whitespace-nowrap">BUT Informatique</strong>, je développe une vision transversale combinant développement, infrastructure et sécurité. À la recherche d&apos;une alternance de 3 ans pour relever des défis techniques à grande échelle.
           </motion.p>
 
           {/* Call to Action */}

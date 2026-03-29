@@ -208,7 +208,7 @@ export function SkillsSection() {
             Mon <span className="text-emerald-500">Arsenal</span> Technologique
           </h2>
           <p className="mt-6 text-lg text-slate-600 dark:text-slate-400 max-w-2xl font-light transition-colors duration-300">
-            Des outils modernes et une base solide pour construire des systèmes performants et évolutifs, de la base de données à l'interface.
+            Des outils modernes et une base solide pour construire des systèmes performants et évolutifs, de la base de données à l&apos;interface.
           </p>
         </motion.div>
 

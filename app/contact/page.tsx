@@ -1,9 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, ArrowLeft, Send, ExternalLink } from "lucide-react";
+import { Mail, ArrowLeft, ExternalLink } from "lucide-react";
 import Link from "next/link";
-import { Button } from "@/components/ui/Button";
 import { GithubIcon, LinkedinIcon } from "@/components/ui/Icons";
 
 const contactLinks = [
@@ -53,7 +52,7 @@ export default function ContactPage() {
             className="inline-flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors group mb-8"
           >
             <ArrowLeft size={20} className="group-hover:-translate-x-1 transition-transform" />
-            <span className="font-medium">Retour à l'accueil</span>
+            <span className="font-medium">Retour à l&apos;accueil</span>
           </Link>
 
           <div className="space-y-4">
@@ -61,7 +60,7 @@ export default function ContactPage() {
               Me <span className="text-emerald-500">Contacter</span>
             </h1>
             <p className="text-xl text-slate-600 dark:text-slate-400 font-light max-w-2xl leading-relaxed transition-colors duration-300">
-              Disponible pour échanger sur des opportunités d'alternance en cycle ingénieur ou sur vos projets technologiques.
+              Disponible pour échanger sur des opportunités d&apos;alternance en cycle ingénieur ou sur vos projets technologiques.
             </p>
           </div>
         </motion.div>
