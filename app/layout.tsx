@@ -15,6 +15,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Portfolio - Léo FERNANDEZ",
   description: "Portfolio de Léo Fernandez, Ingénieur Informatique (BUT RACA). À la recherche d'une alternance de 3 ans en conception logicielle et systèmes sécurisés.",
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
 
 import { Navbar } from "@/components/layout/Navbar";

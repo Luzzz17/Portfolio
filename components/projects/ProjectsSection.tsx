@@ -31,7 +31,7 @@ const projectsData: Project[] = [
   },
   {
     id: "portfolio",
-    title: "Portfolio Ingénieur",
+    title: "Portfolio Personnel",
     description: "Conception et développement d'un espace personnel moderne et performant. Un projet vitrine mettant en avant mes compétences techniques et ma vision du développement web pour ma recherche d'alternance.",
     category: "Perso",
     techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
@@ -105,8 +105,8 @@ export function ProjectsSection() {
               key={f}
               onClick={() => setFilter(f)}
               className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${filter === f
-                  ? "bg-emerald-500/10 text-emerald-400 border border-emerald-500/50 shadow-[0_0_15px_rgba(16,185,129,0.2)]"
-                  : "bg-slate-900/40 text-slate-400 border border-slate-800 hover:text-slate-200 hover:bg-slate-800"
+                ? "bg-emerald-500/10 text-emerald-400 border border-emerald-500/50 shadow-[0_0_15px_rgba(16,185,129,0.2)]"
+                : "bg-slate-900/40 text-slate-400 border border-slate-800 hover:text-slate-200 hover:bg-slate-800"
                 }`}
             >
               {f}

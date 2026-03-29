@@ -48,9 +48,9 @@ export function Hero() {
         style={{
           background: useMotionTemplate`
             radial-gradient(
-              800px circle at ${mouseX}px ${mouseY}px,
-              rgba(16, 185, 129, 0.25),
-              transparent 75%
+              600px circle at ${mouseX}px ${mouseY}px,
+              rgba(16, 185, 129, 0.15),
+              transparent 80%
             )
           `,
         }}

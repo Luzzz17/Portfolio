@@ -39,17 +39,16 @@ const timelineData = [
 export function TimelineSection() {
   return (
     <section id="parcours" className="py-24 relative overflow-hidden">
-      <div className="container px-6 md:px-12 mx-auto max-w-5xl relative z-10">
-        <div className="flex flex-col items-center mb-16 space-y-4">
-          <div className="flex items-center gap-3 font-mono text-[10px] text-emerald-500/60 tracking-widest uppercase">
-            <span className="w-8 h-px bg-emerald-500/30"></span>
-            <span>Evolution // Timeline</span>
-            <span className="w-8 h-px bg-emerald-500/30"></span>
-          </div>
+      <div className="container mx-auto px-6 md:px-12 max-w-6xl relative z-10">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          className="mb-16 md:mb-24"
+        >
           <h2 className="text-4xl md:text-5xl font-bold tracking-tighter text-white text-center">
             Mon <span className="text-emerald-500">Parcours</span>
           </h2>
-        </div>
+        </motion.div>
 
         <div className="relative">
           {/* Vertical Line */}
