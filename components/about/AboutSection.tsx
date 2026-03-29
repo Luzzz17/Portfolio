@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { User, Code2, Database, LayoutTemplate, ShieldCheck, TerminalSquare } from "lucide-react";
 
 export function AboutSection() {
@@ -43,9 +44,15 @@ export function AboutSection() {
               <div className="absolute left-1/2 top-0 bottom-0 w-px bg-emerald-500/5 -translate-x-1/2"></div>
 
               {/* Le contenu ici sera remplacé quand le fichier Image (.jpg) sera importé */}
-              <div className="absolute inset-0 flex flex-col items-center justify-center text-slate-500 group-hover:text-emerald-500/60 transition-colors duration-500">
-                <div className="relative">
-                  <User size={80} strokeWidth={1} />
+              <div className="absolute inset-0 flex flex-col items-center justify-center">
+                <div className="relative w-full h-full">
+                  <Image 
+                    src="/leo.png" 
+                    alt="Léo Fernandez" 
+                    fill 
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    priority
+                  />
                   <motion.div 
                     className="absolute -inset-4 border border-emerald-500/20 rounded-full"
                     animate={{ scale: [1, 1.1, 1], opacity: [0.2, 0.5, 0.2] }}
