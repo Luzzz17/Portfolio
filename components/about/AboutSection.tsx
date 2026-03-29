@@ -1,10 +1,24 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useMotionTemplate, useMotionValue, useSpring } from "framer-motion";
 import Image from "next/image";
 import { User, Code2, Database, LayoutTemplate, ShieldCheck, TerminalSquare } from "lucide-react";
+import { MouseEvent } from "react";
 
 export function AboutSection() {
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+
+  // Smooth the mouse movement
+  const springX = useSpring(mouseX, { stiffness: 150, damping: 25 });
+  const springY = useSpring(mouseY, { stiffness: 150, damping: 25 });
+
+  function handleMouseMove({ currentTarget, clientX, clientY }: MouseEvent) {
+    const { left, top } = currentTarget.getBoundingClientRect();
+    mouseX.set(clientX - left);
+    mouseY.set(clientY - top);
+  }
+
   const skills = [
     { name: "TypeScript", icon: Code2 },
     { name: "React & Next.js", icon: LayoutTemplate },
@@ -26,26 +40,70 @@ export function AboutSection() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.7, ease: "easeOut" }}
             className="relative flex justify-center lg:justify-start"
+            onMouseMove={handleMouseMove}
           >
             {/* Emerald Aura behind photo */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] bg-emerald-500/15 blur-[100px] rounded-full pointer-events-none"></div>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] bg-emerald-500/10 blur-[100px] rounded-full pointer-events-none"></div>
             
-            {/* Photo Container Frame */}
-            <div className="relative w-full max-w-sm aspect-square rounded-2xl overflow-hidden bg-slate-900/50 border border-emerald-500/20 shadow-[0_0_40px_rgba(16,185,129,0.05)] flex items-center justify-center group backdrop-blur-xl">
+            {/* Photo Container Frame with Interactive Border */}
+            <div className="relative w-full max-w-sm aspect-square rounded-2xl bg-slate-900/50 group backdrop-blur-xl shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
               
-              {/* Technical Targeting Crosshairs */}
-              <div className="absolute top-0 left-0 w-8 h-8 border-t border-l border-emerald-500/40"></div>
-              <div className="absolute top-0 right-0 w-8 h-8 border-t border-r border-emerald-500/40"></div>
-              <div className="absolute bottom-0 left-0 w-8 h-8 border-b border-l border-emerald-500/40"></div>
-              <div className="absolute bottom-0 right-0 w-8 h-8 border-b border-r border-emerald-500/40"></div>
-              
-              {/* Horizontal/Vertical center lines (very subtle) */}
-              <div className="absolute top-1/2 left-0 right-0 h-px bg-emerald-500/5 -translate-y-1/2"></div>
-              <div className="absolute left-1/2 top-0 bottom-0 w-px bg-emerald-500/5 -translate-x-1/2"></div>
+              {/* Diffused Back Glow (Follows Mouse) */}
+              <motion.div
+                className="absolute inset-x-0 inset-y-0 -z-10 pointer-events-none opacity-0 group-hover:opacity-100 blur-[30px] transition-opacity duration-700"
+                style={{
+                  background: useMotionTemplate`
+                    radial-gradient(
+                      120px circle at ${springX}px ${springY}px,
+                      rgba(16, 185, 129, 0.4),
+                      transparent 80%
+                    )
+                  `,
+                }}
+              />
 
-              {/* Le contenu ici sera remplacé quand le fichier Image (.jpg) sera importé */}
-              <div className="absolute inset-0 flex flex-col items-center justify-center">
-                <div className="relative w-full h-full">
+              {/* Interactive Sharp Border Glow */}
+              <motion.div
+                className="absolute -inset-[1px] z-10 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                style={{
+                  background: useMotionTemplate`
+                    radial-gradient(
+                      100px circle at ${springX}px ${springY}px,
+                      rgba(16, 185, 129, 0.9),
+                      transparent 70%
+                    )
+                  `,
+                  maskImage: 'linear-gradient(black, black), linear-gradient(black, black)',
+                  maskClip: 'content-box, border-box',
+                  maskComposite: 'exclude',
+                  padding: '1.5px',
+                  borderRadius: 'inherit',
+                }}
+              />
+
+              {/* Subtle Atmospheric Blur Border (The "Lueur") */}
+              <motion.div
+                className="absolute -inset-[4px] z-10 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-700"
+                style={{
+                  background: useMotionTemplate`
+                    radial-gradient(
+                      150px circle at ${springX}px ${springY}px,
+                      rgba(16, 185, 129, 0.4),
+                      transparent 80%
+                    )
+                  `,
+                  maskImage: 'linear-gradient(black, black), linear-gradient(black, black)',
+                  maskClip: 'content-box, border-box',
+                  maskComposite: 'exclude',
+                  padding: '6px',
+                  borderRadius: 'inherit',
+                  filter: 'blur(6px)',
+                }}
+              />
+
+              {/* Image Content */}
+              <div className="absolute inset-0 flex flex-col items-center justify-center p-[1px] overflow-hidden rounded-2xl">
+                <div className="relative w-full h-full rounded-[15px] overflow-hidden">
                   <Image 
                     src="/leo.png" 
                     alt="Léo Fernandez" 
@@ -53,11 +111,9 @@ export function AboutSection() {
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                     priority
                   />
-                  <motion.div 
-                    className="absolute -inset-4 border border-emerald-500/20 rounded-full"
-                    animate={{ scale: [1, 1.1, 1], opacity: [0.2, 0.5, 0.2] }}
-                    transition={{ duration: 4, repeat: Infinity }}
-                  />
+                  
+                  {/* Subtle inner shadow/gradient */}
+                  <div className="absolute inset-0 shadow-[inset_0_0_40px_rgba(0,0,0,0.2)] pointer-events-none"></div>
                 </div>
               </div>
             </div>
