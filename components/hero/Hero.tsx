@@ -42,9 +42,9 @@ export function Hero() {
       onMouseMove={handleMouseMove}
     >
       
-      {/* Magnetic Interactive Glow Effect (Desktop) */}
+      {/* Magnetic Interactive Glow Effect */}
       <motion.div
-        className="pointer-events-none absolute inset-0 z-0 transition duration-1000 opacity-0 group-hover:opacity-100 hidden md:block"
+        className="pointer-events-none absolute inset-0 z-0 transition duration-1000 opacity-0 group-hover:opacity-100"
         style={{
           background: useMotionTemplate`
             radial-gradient(
@@ -56,9 +56,6 @@ export function Hero() {
         }}
       />
 
-      {/* Fallback Static Glow (Mobile) */}
-      <div className="absolute top-1/3 -right-24 w-[800px] h-[800px] bg-emerald-900/15 blur-[120px] rounded-full pointer-events-none md:hidden z-0"></div>
-      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-emerald-900/5 blur-[150px] rounded-full pointer-events-none md:hidden z-0"></div>
 
       <div className="container relative z-10 px-6 md:px-12 mx-auto max-w-6xl">
         <motion.div 
