@@ -75,7 +75,7 @@ export function Hero() {
 
           {/* Title */}
           <motion.div variants={itemVariants} className="space-y-4 max-w-4xl">
-            <h1 className="text-6xl md:text-8xl font-bold tracking-tighter text-white">
+            <h1 className="text-5xl md:text-8xl font-bold tracking-tighter text-white">
               Léo Fernandez
             </h1>
             <p className="text-2xl md:text-4xl font-medium tracking-tight text-slate-400">
