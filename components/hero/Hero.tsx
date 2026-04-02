@@ -97,8 +97,14 @@ export function Hero() {
             >
               Voir mon profil
             </Button>
-            <Button variant="ghost" size="lg" icon={Download} iconPosition="left">
-              Télécharger mon CV
+            <Button 
+              variant="ghost" 
+              size="lg" 
+              icon={Download} 
+              iconPosition="left"
+              onClick={() => window.open("/CV LEO FERNANDEZ Ingenieur Informatique.pdf", "_blank")}
+            >
+              Consulter mon CV
             </Button>
           </motion.div>
 
