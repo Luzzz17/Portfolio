@@ -51,6 +51,7 @@ export default function RootLayout({
           </main>
           <Footer />
           <Analytics />
+          <SpeedInsights />
         </ThemeProvider>
       </body>
     </html>
