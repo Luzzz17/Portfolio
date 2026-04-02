@@ -102,7 +102,7 @@ export function Hero() {
               size="lg" 
               icon={Download} 
               iconPosition="left"
-              onClick={() => window.open("/CV LEO FERNANDEZ Ingenieur Informatique.pdf", "_blank")}
+              onClick={() => window.open("/cv", "_blank")}
             >
               Consulter mon CV
             </Button>
