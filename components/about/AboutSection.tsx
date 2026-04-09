@@ -125,7 +125,7 @@ export function AboutSection() {
               </h2>
             </div>
 
-            <div className="space-y-5 text-lg text-slate-600 dark:text-slate-400 font-light leading-relaxed transition-colors duration-300">
+            <div className="space-y-5 text-lg text-slate-700 dark:text-slate-400 font-light leading-relaxed transition-colors duration-300">
               <p>
                 Passionné par le développement depuis mes premières lignes de code, je suis actuellement étudiant en <strong className="text-slate-900 dark:text-slate-200 font-medium transition-colors">2ème année de <span className="whitespace-nowrap">BUT Informatique</span></strong>, spécialité <span className="text-emerald-500 dark:text-emerald-400/90 font-medium">Réalisation d&apos;Applications (RACA)</span>.
               </p>

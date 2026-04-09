@@ -134,7 +134,7 @@ function AccordionItem({
             <h4 className={`text-lg md:text-xl font-bold transition-colors duration-300 ${isOpen ? "text-emerald-600 dark:text-emerald-400" : "text-slate-900 dark:text-white"}`}>
               {category.title}
             </h4>
-            <p className={`text-sm font-light transition-all duration-500 mt-1 hidden sm:block ${isOpen ? "text-slate-600 dark:text-slate-300" : "text-slate-500 dark:text-slate-400"}`}>
+            <p className={`text-sm font-light transition-all duration-500 mt-1 hidden sm:block ${isOpen ? "text-slate-700 dark:text-slate-300" : "text-slate-600 dark:text-slate-400"}`}>
               {category.description}
             </p>
           </div>
@@ -142,7 +142,7 @@ function AccordionItem({
         <motion.div
           animate={{ rotate: isOpen ? 180 : 0 }}
           transition={{ duration: 0.3, ease: "easeInOut" }}
-          className={`shrink-0 transition-colors ${isOpen ? "text-emerald-600 dark:text-emerald-400" : "text-slate-400 dark:text-slate-500 group-hover:text-emerald-500"}`}
+          className={`shrink-0 transition-colors ${isOpen ? "text-emerald-600 dark:text-emerald-400" : "text-slate-500 dark:text-slate-400 group-hover:text-emerald-500"}`}
         >
           <ChevronDown size={24} />
         </motion.div>
@@ -171,7 +171,7 @@ function AccordionItem({
                     key={index}
                     onClick={(e) => e.stopPropagation()} // Prevent closing accordion when clicking on tag
                     className="inline-flex justify-center items-center px-4 py-2 text-sm md:text-[15px] font-mono font-medium rounded-xl 
-                               bg-white dark:bg-slate-950 text-slate-700 dark:text-slate-200 
+                               bg-white dark:bg-slate-950 text-slate-800 dark:text-slate-200 
                                border border-slate-200/80 dark:border-white/10 
                                hover:bg-emerald-50 hover:text-emerald-600 dark:hover:bg-emerald-500/20 dark:hover:text-emerald-400
                                hover:border-emerald-300 dark:hover:border-emerald-500/50
@@ -207,7 +207,7 @@ export function SkillsSection() {
           <h2 className="text-4xl md:text-5xl font-bold tracking-tighter text-slate-900 dark:text-white transition-colors duration-300">
             Mon <span className="text-emerald-500">Arsenal</span> Technologique
           </h2>
-          <p className="mt-6 text-lg text-slate-600 dark:text-slate-400 max-w-2xl font-light transition-colors duration-300">
+          <p className="mt-6 text-lg text-slate-700 dark:text-slate-400 max-w-2xl font-light transition-colors duration-300">
             Des outils modernes et une base solide pour construire des systèmes performants et évolutifs, de la base de données à l&apos;interface.
           </p>
         </motion.div>

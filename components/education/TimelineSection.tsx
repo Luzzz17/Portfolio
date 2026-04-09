@@ -90,11 +90,11 @@ export function TimelineSection() {
                     <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-emerald-500 dark:group-hover:text-emerald-400 transition-colors">
                       {item.title}
                     </h3>
-                    <div className="flex items-center gap-2 text-sm font-medium text-slate-600 dark:text-slate-400 mb-4 transition-colors">
+                    <div className="flex items-center gap-2 text-sm font-medium text-slate-700 dark:text-slate-400 mb-4 transition-colors">
                       <GraduationCap size={16} className="text-emerald-500/60" />
                       {item.institution}
                     </div>
-                    <p className="text-sm text-slate-600 dark:text-slate-500 leading-relaxed font-light transition-colors">
+                    <p className="text-sm text-slate-700 dark:text-slate-400 leading-relaxed font-light transition-colors">
                       {item.description}
                     </p>
                   </div>

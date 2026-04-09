@@ -49,7 +49,7 @@ export default function ContactPage() {
         >
           <Link 
             href="/" 
-            className="inline-flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors group mb-8"
+            className="inline-flex items-center gap-2 text-slate-700 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors group mb-8"
           >
             <ArrowLeft size={20} className="group-hover:-translate-x-1 transition-transform" />
             <span className="font-medium">Retour à l&apos;accueil</span>
@@ -59,7 +59,7 @@ export default function ContactPage() {
             <h1 className="text-5xl md:text-7xl font-bold tracking-tighter">
               Me <span className="text-emerald-500">Contacter</span>
             </h1>
-            <p className="text-xl text-slate-600 dark:text-slate-400 font-light max-w-2xl leading-relaxed transition-colors duration-300">
+            <p className="text-xl text-slate-700 dark:text-slate-400 font-light max-w-2xl leading-relaxed transition-colors duration-300">
               Disponible pour échanger sur des opportunités d&apos;alternance en cycle ingénieur ou sur vos projets technologiques.
             </p>
           </div>
@@ -72,6 +72,7 @@ export default function ContactPage() {
               href={link.href}
               target={link.href.startsWith('mailto:') ? undefined : '_blank'}
               rel={link.href.startsWith('mailto:') ? undefined : 'noopener noreferrer'}
+              aria-label={`Me contacter via ${link.name}`}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
@@ -83,7 +84,7 @@ export default function ContactPage() {
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-1 group-hover:text-emerald-500 dark:group-hover:text-emerald-400 transition-colors">{link.name}</h3>
                 <p className="text-emerald-600 dark:text-emerald-500/80 font-mono text-xs mb-4">{link.handle}</p>
-                <p className="text-slate-600 dark:text-slate-500 text-sm font-light leading-relaxed transition-colors duration-300">
+                <p className="text-slate-700 dark:text-slate-400 text-sm font-light leading-relaxed transition-colors duration-300">
                   {link.description}
                 </p>
               </div>

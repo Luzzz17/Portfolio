@@ -83,9 +83,9 @@ export function Hero() {
           {/* Subtitle */}
           <motion.p 
             variants={itemVariants} 
-            className="max-w-3xl text-lg md:text-xl text-slate-600 dark:text-slate-500 leading-relaxed font-light transition-colors duration-300"
+            className="max-w-3xl text-lg md:text-xl text-slate-700 dark:text-slate-400 leading-relaxed font-light transition-colors duration-300"
           >
-            Futur ingénieur passionné par la résolution de problèmes complexes. En <strong className="text-slate-800 dark:text-slate-300 font-medium whitespace-nowrap">BUT Informatique</strong>, je développe une vision transversale combinant développement, infrastructure et sécurité. À la recherche d&apos;une alternance de 3 ans dans les <strong className="text-slate-800 dark:text-slate-300 font-medium">Hauts-de-France</strong> (Amiens, Beauvais, Compiègne) ou <strong className="text-slate-800 dark:text-slate-300 font-medium">Paris</strong>. Ouvert à une mobilité nationale.
+            Futur ingénieur passionné par la résolution de problèmes complexes. En <strong className="text-slate-900 dark:text-slate-200 font-medium whitespace-nowrap">BUT Informatique</strong>, je développe une vision transversale combinant développement, infrastructure et sécurité. À la recherche d&apos;une alternance de 3 ans dans les <strong className="text-slate-900 dark:text-slate-200 font-medium">Hauts-de-France</strong> (Amiens, Beauvais, Compiègne) ou <strong className="text-slate-900 dark:text-slate-200 font-medium">Paris</strong>. Ouvert à une mobilité nationale.
           </motion.p>
 
           {/* Call to Action */}
