@@ -36,10 +36,17 @@ export function Navbar() {
   };
 
 
+  const scrollToTop = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (pathname === '/') {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 py-4 bg-white/80 dark:bg-black/60 backdrop-blur-md border-b border-slate-200 dark:border-white/5 transition-colors duration-300">
       {/* Logo */}
-      <Link href="/" className="flex items-center group">
+      <Link href="/" onClick={scrollToTop} className="flex items-center group">
         <Logo />
       </Link>
 
@@ -67,6 +74,7 @@ export function Navbar() {
           href="mailto:fernandez06.leo@gmail.com"
           className="p-2 text-slate-600 dark:text-slate-400 hover:text-emerald-500 dark:hover:text-emerald-400 transition-colors hidden sm:block"
           title="Envoyer un email directement"
+          aria-label="Envoyer un email à Léo Fernandez"
         >
           <Mail size={20} />
         </a>

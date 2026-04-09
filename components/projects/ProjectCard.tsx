@@ -35,12 +35,24 @@ export function ProjectCard({ project }: { project: Project }) {
           </span>
           <div className="flex space-x-3 text-slate-500">
             {project.github && (
-              <a href={project.github} target="_blank" rel="noreferrer" className="hover:text-emerald-400 transition-colors">
+              <a 
+                href={project.github} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="hover:text-emerald-400 transition-colors"
+                aria-label={`Code source du projet ${project.title} sur GitHub`}
+              >
                 <GithubIcon size={18} />
               </a>
             )}
             {project.link && (
-              <a href={project.link} target="_blank" rel="noreferrer" className="hover:text-emerald-400 transition-colors">
+              <a 
+                href={project.link} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="hover:text-emerald-400 transition-colors"
+                aria-label={`Voir la démo en direct du projet ${project.title}`}
+              >
                 <ExternalLink size={18} />
               </a>
             )}

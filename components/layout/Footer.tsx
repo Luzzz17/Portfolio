@@ -11,7 +11,7 @@ export function Footer() {
           {/* Copyright & Brand */}
           <div className="flex flex-col items-center md:items-start space-y-4">
             <Logo />
-            <p className="text-slate-500 text-sm font-light">
+            <p className="text-slate-600 dark:text-slate-400 text-sm font-light">
               &copy; {new Date().getFullYear()} Léo Fernandez. Conception Logicielle.
             </p>
           </div>
@@ -34,18 +34,18 @@ export function Footer() {
               <a 
                 href="https://github.com/Luzzz17" 
                 target="_blank" 
-                rel="noreferrer" 
+                rel="noopener noreferrer" 
                 className="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors"
-                aria-label="GitHub"
+                aria-label="GitHub de Léo Fernandez"
               >
                 <GithubIcon size={22} />
               </a>
               <a 
                 href="https://www.linkedin.com/in/fernandezleo/" 
                 target="_blank" 
-                rel="noreferrer" 
+                rel="noopener noreferrer" 
                 className="text-slate-600 dark:text-slate-400 hover:text-emerald-600 dark:hover:text-emerald-500 transition-colors"
-                aria-label="LinkedIn"
+                aria-label="LinkedIn de Léo Fernandez"
               >
                 <LinkedinIcon size={22} />
               </a>

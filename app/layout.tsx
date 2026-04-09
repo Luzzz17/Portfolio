@@ -13,11 +13,44 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Portfolio - Léo FERNANDEZ",
-  description: "Portfolio de Léo Fernandez, Ingénieur Informatique (BUT RACA). À la recherche d'une alternance de 3 ans en conception logicielle et systèmes sécurisés.",
+  metadataBase: new URL("https://leo-fernandez.fr"),
+  title: "Léo FERNANDEZ | Alternance Ingénieur Informatique - Hauts-de-France & Mobilité Nationale",
+  description: "Étudiant en BUT Informatique (RACA) à la recherche d'une alternance de 3 ans en conception logicielle. Basé dans les Hauts-de-France, mobile nationalement (Amiens, Beauvais, Compiègne, Paris, IDF).",
+  keywords: ["Alternance", "Informatique", "Ingénieur", "Hauts-de-France", "Mobilité Nationale", "Paris", "IDF", "Amiens", "Beauvais", "Compiègne", "Développeur", "BUT RACA", "Software Engineer"],
+  authors: [{ name: "Léo Fernandez" }],
+  creator: "Léo Fernandez",
+  openGraph: {
+    type: "website",
+    locale: "fr_FR",
+    url: "https://leo-fernandez.fr",
+    title: "Léo FERNANDEZ | Alternance Ingénieur Informatique",
+    description: "Futur ingénieur en conception logicielle. Recherche alternance de 3 ans. Hauts-de-France & Mobilité Nationale.",
+    siteName: "Portfolio Léo Fernandez",
+    images: [
+      {
+        url: "/leo.png",
+        width: 800,
+        height: 800,
+        alt: "Léo Fernandez - Futur Ingénieur Informatique",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Léo FERNANDEZ | Alternance Ingénieur Informatique",
+    description: "Recherche alternance de 3 ans en informatique (Hauts-de-France & Mobilité Nationale).",
+    images: ["/leo.png"],
+  },
   icons: {
     icon: "/favicon.svg",
   },
+};
+
+export const viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#f8fafc" },
+    { media: "(prefers-color-scheme: dark)", color: "#000000" },
+  ],
 };
 
 import { Navbar } from "@/components/layout/Navbar";
@@ -33,7 +66,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="fr"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
       suppressHydrationWarning
     >

@@ -12,7 +12,9 @@ export function Logo({ className = "" }: { className?: string }) {
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         className="text-emerald-500"
+        aria-hidden="true"
       >
+        <title>Logo Léo Fernandez</title>
         {/* Main geometric 'L' structure */}
         <motion.path
           d="M8 6V26H24"

@@ -131,9 +131,9 @@ function AccordionItem({
             <category.icon className="w-6 h-6 md:w-7 md:h-7" strokeWidth={1.5} />
           </div>
           <div className="flex-1 pr-4">
-            <h3 className={`text-lg md:text-xl font-bold transition-colors duration-300 ${isOpen ? "text-emerald-600 dark:text-emerald-400" : "text-slate-900 dark:text-white"}`}>
+            <h4 className={`text-lg md:text-xl font-bold transition-colors duration-300 ${isOpen ? "text-emerald-600 dark:text-emerald-400" : "text-slate-900 dark:text-white"}`}>
               {category.title}
-            </h3>
+            </h4>
             <p className={`text-sm font-light transition-all duration-500 mt-1 hidden sm:block ${isOpen ? "text-slate-600 dark:text-slate-300" : "text-slate-500 dark:text-slate-400"}`}>
               {category.description}
             </p>
