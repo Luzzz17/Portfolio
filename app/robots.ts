@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: '/private/',
     },
-    sitemap: 'https://leo-fernandez.fr/sitemap.xml',
+    sitemap: 'https://leofernandez.fr/sitemap.xml',
   };
 }

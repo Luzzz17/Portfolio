@@ -10,7 +10,7 @@ export default function Home() {
     "@type": "Person",
     "name": "Léo Fernandez",
     "jobTitle": "Étudiant Ingénieur en Informatique",
-    "url": "https://leo-fernandez.fr",
+    "url": "https://leofernandez.fr",
     "sameAs": [
       "https://www.linkedin.com/in/fernandezleo/",
       "https://github.com/Luzzz17"

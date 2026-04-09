@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://leo-fernandez.fr"),
+  metadataBase: new URL("https://leofernandez.fr"),
   title: "Léo FERNANDEZ | Alternance Ingénieur Informatique - Hauts-de-France & Mobilité Nationale",
   description: "Étudiant en BUT Informatique (RACA) à la recherche d'une alternance de 3 ans en conception logicielle. Basé dans les Hauts-de-France, mobile nationalement (Amiens, Beauvais, Compiègne, Paris, IDF).",
   keywords: ["Alternance", "Informatique", "Ingénieur", "Hauts-de-France", "Mobilité Nationale", "Paris", "IDF", "Amiens", "Beauvais", "Compiègne", "Développeur", "BUT RACA", "Software Engineer"],
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "fr_FR",
-    url: "https://leo-fernandez.fr",
+    url: "https://leofernandez.fr",
     title: "Léo FERNANDEZ | Alternance Ingénieur Informatique",
     description: "Futur ingénieur en conception logicielle. Recherche alternance de 3 ans. Hauts-de-France & Mobilité Nationale.",
     siteName: "Portfolio Léo Fernandez",
